@@ -1,0 +1,11 @@
+{% if user_list %}
+    <ul>
+    {% for user in user_list %}
+    	{% if user.status %}
+	        <li><a href="/users/{{ user.id }}/">{{ user.id }} {{ user.login }}</a></li>
+	    {% endif %}
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No users are available.</p>
+{% endif %}

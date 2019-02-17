@@ -21,5 +21,5 @@ class User(models.Model):
         db_table = "users"
 
 class User_data(models.Model):
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_id = models.OneToOneField(User, on_delete=models.CASCADE)
     pwd = models.CharField(max_length=200)
