@@ -2,7 +2,7 @@
     <ul>
     {% for user in user_list %}
     	{% if user.status %}
-	        <li><a href="/users/{{ user.id }}/">{{ user.id }} {{ user.login }}</a></li>
+	        <li>{{ user.id }} {{ user.login }}</li>
 	    {% endif %}
     {% endfor %}
     </ul>
