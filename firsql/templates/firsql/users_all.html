@@ -1,8 +1,9 @@
 {% if user_list %}
     <ul>
+     <li><b><u>id &nbsp;&nbsp; login</u></b></li>
     {% for user in user_list %}
     	{% if user.status %}
-	        <li>{{ user.id }} {{ user.login }}</li>
+	        <li>{{ user.id }} &nbsp;&nbsp;&nbsp;&nbsp;{{ user.login }}</li>
 	    {% endif %}
     {% endfor %}
     </ul>
