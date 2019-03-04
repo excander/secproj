@@ -5,9 +5,9 @@
     <ul>
      <li><b><u>id &nbsp;&nbsp; login</u></b></li>
     {% for user in user_list %}
-    	{% if user.status %}
-	        <li>{{ user.id }} &nbsp;&nbsp;&nbsp;&nbsp;{{ user.login }}</li>
-	    {% endif %}
+    	{# if user.is_staff #}
+	        <li>{{ user.id }} &nbsp;&nbsp;&nbsp;&nbsp;{{ user.username }}</li>
+	    {# endif #}
     {% endfor %}
     </ul>
 {% else %}

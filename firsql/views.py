@@ -2,8 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, Http404
 from django.db import connection
 
-
-from .models import User
+from django.contrib.auth.models import User
+from .models import Profile
 
 
 def index(request):
@@ -16,13 +16,13 @@ def users_all(request):
     return render(request, 'firsql/users_all.html', context)
 
 def user_detail(request, user_id):
-    user = get_object_or_404(User, pk=user_id)
+    user = get_object_or_404(Profile, pk=user_id)
     return render(request, 'firsql/user_detail.html', {'user': user})
 
 def user_detail_by_login(request, user_login):
-    user = User.objects.filter(login=user_login)
+    user = Profile.objects.filter(login=user_login)
     if user:
         user = user[0]
         return render(request, 'firsql/user_detail.html', {'user': user})
     else:
-        raise Http404("User does not exist")
+        raise Http404("Profile does not exist")
