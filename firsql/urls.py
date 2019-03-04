@@ -7,5 +7,5 @@ urlpatterns = [
     path('users/', views.users_all, name='users_all'),
     path('id=<user_id>/', views.user_detail, name='user_detail'), #by-id?id=
     path('login=<str:user_login>/', views.user_detail_by_login, name='user_detail_by_login'), #by-login?login=
-
+	path('accounts/profile/', views.profile, name='profile'),
 ]

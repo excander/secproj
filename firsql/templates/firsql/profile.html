@@ -1,0 +1,35 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h2>login: {{ user.username }}
+{% if user.is_staff %}
+	(ADMINISTRATOR)
+{% endif %}
+</h2>
+
+<h0>
+	id: {{ user.id }} <p>
+	<!-- money_amount: {{ user.profile.money_amount }} <p> -->
+		<form method="post" action="{# url 'change_card_number' #}">
+		{% csrf_token %}
+			<div>
+				{{ money_amount_form }}
+				<input type="submit" name="submit1" value="Change" />
+			</div>
+
+		</form>
+	<!-- card_number: {{ user.profile.card_number }} <p> -->
+		<form method="post" action="{# url 'change_card_number' #}">
+		{% csrf_token %}
+			<div>
+				{{ card_number_form }}
+				<input type="submit" name="submit2" value="Change" />
+			</div>
+
+		</form>
+	status: {{ user.profile.status }} <p>
+
+</h0>
+
+{% endblock %}
