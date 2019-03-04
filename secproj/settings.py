@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'h97=#g!uwu#g%byy3dv43sdz-5ljo@yjfj3i#cu5af%%bvzn^('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'secproj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['./templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,3 +119,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+TIME_ZONE = 'Europe/Moscow'
+
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+# LOGIN_REDIRECT_URL = '/users/'

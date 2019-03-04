@@ -1,3 +1,7 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
 <a href="/users/"> /users</a></p>
 <a href={% url 'user_detail' 1 %}> by-id</a></p>
 <a href={% url 'user_detail_by_login' "admin" %}> by-login</a></p>
+{% endblock %}

@@ -1,3 +1,6 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
 {% if user_list %}
     <ul>
      <li><b><u>id &nbsp;&nbsp; login</u></b></li>
@@ -10,3 +13,4 @@
 {% else %}
     <p>No users are available.</p>
 {% endif %}
+{% endblock %}
